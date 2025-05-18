@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .question { margin-bottom: 20px; }
+        .hidden { display: none; }
+        .answers-container { display: flex; flex-direction: column; align-items: center; }
+        .answers-container button { margin: 5px; padding: 10px; width: 300px; }
+    </style>
+</head>
+<body>
+    <h1>Quiz</h1>
+    <div id="quiz-container">
+        <div id="question-container"></div>
+        <button onclick="nextQuestion()">PULAR</button>
+    </div>
+    <h2 id="result" class="hidden"></h2>
+
+    <script>
+        const questions = [
+            { 
+                question: "Como você explica a diferença entre I.A estreita e I.A geral? Em quais contextos cada uma delas é mais aplicável?", 
+                answers: [
+                    "IA estreita é específica e IA geral versátil", 
+                    "Estreita são tarefas únicas e geral múltiplas funções", 
+                    "Estreita é utilizada em apps e geral em IA avançada", 
+                    "Aplicação da estreita em hoje e a geral no futuro", 
+                    "Estreita é limitada e a geral é humana"
+                ], 
+                correct: 1 
+            },
+            { 
+                question: "A ética no desenvolvimento da IA é um tema crucial. Como princípios éticos podem influenciar diretamente o design e a implantação de sistemas de IA?", 
+                answers: [
+                    "Garante segurança", 
+                    "Evita discriminação", 
+                    "Promove transparência", 
+                    "Assegura privacidade", 
+                    "Alinha valores humanos"
+                ], 
+                correct: 5 
+            },
+            { 
+                question: "Previsão de tendências com IA e Banco de Dados", 
+                answers: [
+                    "Saúde: diagnóstico", 
+                    "Finanças: análise de mercado", 
+                    "Varejo: preferência do cliente", 
+                    "Transporte: rotas inteligentes", 
+                    "Educação: personalização"
+                ], 
+                correct: 3 
+            },
+            { 
+                question: "IA otimizando consultas em BD distribuídos", 
+                answers: [
+                    "Reduz latência", 
+                    "Melhora eficiência", 
+                    "Gerencia dados rápidos", 
+                    "Aloca recursos", 
+                    "Automatiza ajustes"
+                ], 
+                correct: 2 
+            },
+            { 
+                question: "Riscos na organização de dados não estruturados", 
+                answers: [
+                    "Dados incoerentes", 
+                    "Erros de classificação", 
+                    "Violações de privacidade", 
+                    "Baixa confiabilidade", 
+                    "Mitigação: validação"
+                ], 
+                correct: 5 
+            },
+            { 
+                question: "Detecção de anomalias em redes", 
+                answers: [
+                    "IA aprende padrões", 
+                    "Detecta em tempo real", 
+                    "Minimiza falsos positivos", 
+                    "Complementa métodos antigos", 
+                    "Limitação: dados ruins."
+                ], 
+                correct: 2 
+            },
+            { 
+                question: "Previsão e prevenção de ataques cibernéticos", 
+                answers: [
+                    "Monitora redes", 
+                    "Analisa riscos", 
+                    "Modela ameaças", 
+                    "Desafia privacidade", 
+                    "Ética: uso de dados"
+                ], 
+                correct: 1 
+            },
+            { 
+                question: "Impacto na decisão de analistas humanos", 
+                answers: [
+                    "Acelera decisões", 
+                    "Filtra alertas", 
+                    "Foco em problemas", 
+                    "Reduz carga manual", 
+                    "Inspira confiança"
+                ], 
+                correct: 1 
+            },
+            { 
+                question: "Papel em autenticação e detecção de fraudes", 
+                answers: [
+                    "Monitoramento constante", 
+                    "Personalização dinâmica", 
+                    "Combate acessos falsos", 
+                    "Melhora algoritmos", 
+                    "Prioriza usabilidade"
+                ], 
+                correct: 3 
+            },
+            { 
+                question: "IA em gerenciamento de dados e segurança", 
+                answers: [
+                    "Analisa grande escala", 
+                    "Protege dados sensíveis", 
+                    "Automatiza ações", 
+                    "Descobre vulnerabilidades", 
+                    "Exemplos: saúde e finanças"
+                ], 
+                correct: 2 
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            const container = document.getElementById("question-container");
+            container.innerHTML = "";
+
+            if (currentQuestion >= questions.length) {
+                document.getElementById("quiz-container").classList.add("hidden");
+                document.getElementById("result").innerText = `Você acertou ${score} de ${questions.length} perguntas!`;
+                document.getElementById("result").classList.remove("hidden");
+                return;
+            }
+
+            const q = questions[currentQuestion];
+            const questionElement = document.createElement("div");
+            questionElement.classList.add("question");
+            questionElement.innerText = q.question;
+            container.appendChild(questionElement);
+
+            const answersContainer = document.createElement("div");
+            answersContainer.classList.add("answers-container");
+
+            q.answers.forEach((answer, index) => {
+                const button = document.createElement("button");
+                button.innerText = answer;
+                button.onclick = () => {
+                    if (index + 1 === q.correct) { 
+                        score++;
+                    }
+                    currentQuestion++;
+                    loadQuestion();
+                };
+                answersContainer.appendChild(button);
+            });
+
+            container.appendChild(answersContainer);
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            loadQuestion();
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>
