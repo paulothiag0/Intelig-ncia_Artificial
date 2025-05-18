@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem Somos</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+            body {
+                font-family: arial, sans-serif;
+                line-height: 1.6;
+                margin: 20px;
+                text-align: center;
+                background: (to bottom, #000000, #1a1a1a, #333333);
+                color: white;
+            }
+
+            nav{
+                margin-bottom: 20px;
+            }
+            nav a {
+                margin: 10px;
+                padding: 10px;
+                background: #db8534;
+                color: lightgray;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background 0.3s ease-in-out, transform 0.3s;
+            }
+            nav a:hover {
+                background: #b96f29;
+                transform: scale(1.1);
+            }
+
+            article {
+                max-width: 800px;
+                margin: auto;
+                padding: 20px;
+                background-color: #f9f9f9;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(300, 300, 300, 0.1);
+                color: black;
+            }
+
+            @media screen and (max-width: 600px) {
+                body {
+                    margin: 10px;
+                }
+                article {
+                    padding: 10px;
+                }
+                nav a{
+                    display: block;
+                    margin: 5px auto;
+                }
+            }
+
+            nav a:focus {
+                outline: 3px solid #b96f29;
+            }
+            
+        </style>
+    </head>
+    <body>
+
+        <nav>
+            <a href="Apresentação.html">Apresentação</a>
+            <a href="Artigo.html">Artigo</a>
+            <a href="Quiz.html">Quiz html</a>
+        </nav>
+    </style>
+
+</head>
+<body>
+
+    <h1>Quem Nós Somos</h1>
+
+    <section id="quem-somos" style="margin-top: 50px; text-align: center;">
+        <h2>Sobre nós</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+            body {
+                font-family: arial, sans-serif;
+                line-height: 1.6;
+                margin: 20px;
+                text-align: center;
+                background: (to bottom, #000000, #1a1a1a, #333333);
+                color: white;
+            }
+
+            nav{
+                margin-bottom: 20px;
+            }
+            nav a {
+                margin: 10px;
+                padding: 10px;
+                background: #db8534;
+                color: lightgray;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background 0.3s ease-in-out, transform 0.3s;
+            }
+            nav a:hover {
+                background: #b96f29;
+                transform: scale(1.1);
+            }
+
+            article {
+                max-width: 800px;
+                margin: auto;
+                padding: 20px;
+                background-color: #f9f9f9;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(300, 300, 300, 0.1);
+                color: black;
+            }
+
+            @media screen and (max-width: 600px) {
+                body {
+                    margin: 10px;
+                }
+                article {
+                    padding: 10px;
+                }
+                nav a{
+                    display: block;
+                    margin: 5px auto;
+                }
+            }
+
+            nav a:focus {
+                outline: 3px solid #b96f29;
+            }
+            
+        </style>
+    </head>
+    <body>
+
+        <nav>
+            <a href="Artigo.html">Artigo</a>
+            <a href="Quem_somos.html">Quem Somos</a>
+            <a href="Quiz.html">Quiz html</a>
+        </nav>
+
+        <header>
+            <h1>Inteligência Artificial</h1>
+        </header>
+
+        <Article>
+            <h2>Objetivo do Site</h2>
+            <p>Apresentar a Inteligência Artificial ao público, conceito, nascimento, implementação e impacto nas áreas econômicas e no mercado.</p>
+        </Article>
+        
+</body>
+</html>
