@@ -1,0 +1,69 @@
+/* Estilo geral do site */
+/* Estiliza os blocos de código */
+/* Define fundo preto para a página */
+body {
+    background: linear-gradient(to bottom, #000000, #1a1a1a, #333333, #444444); /* Gradiente mais equilibrado */
+    color: white; /* Garante que todo o texto fique visível */
+    /* Estiliza todos os links para ficarem visíveis */
+a {
+    color: orange; /* Define uma cor laranja clara para o texto do link */
+    text-decoration: none; /* Remove o sublinhado padrão */
+}
+
+/* Ao passar o mouse sobre os links */
+a:hover {
+    color: orange; /* Deixa os links mais destacados ao passar o mouse */
+    text-decoration: underline; /* Adiciona um sublinhado para realce */
+}
+
+}
+
+/* Caso tenha textos dentro de divs ou parágrafos */
+p, div, h1, h2, h3, h4, h5, h6, span {
+    color: black; /* Deixa todos os textos claros e visíveis */
+}
+
+/* Estilização das imagens */
+img {
+    width: 550px /* largura */;
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Sombra suave */
+    max-width: 100%; /* Ajusta a largura para telas menores */
+    height: auto; /* Mantém a proporção */
+    display: block; /* Centraliza a imagem */
+    margin: 20px auto; /* Espaçamento */
+}
+
+h1 { 
+    color:#f39c12; /* Define a cor laranja para o título */
+}
+footer p {
+    color: #f39c12; /* Define a cor laranja para o texto do rodapé */
+}
+code {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    font-family: monospace;
+}
+
+/* Estiliza os botões */
+button {
+    background-color: orange;
+    color: black;
+    padding: 12px 24px;
+    border: 2px solid #d67d00;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse sobre os botões */
+button:hover {
+    background-color: darkorange;
+    border-color: #a95d00;
+}
